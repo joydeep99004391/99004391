@@ -47,8 +47,8 @@ def getdata(data,psno):
                            #print("yyy",data_buff[0][k])
                            if psn==psno:
                              total_data_buffer.append( data_buff[0][k][1:])
-                 total_data[psn]=total_data_buffer 
+                 total_data[psno]=total_data_buffer 
                                
         return total_data
-tot=getdata(data,str(99004393.0))
+tot=getdata(data,str(99004391.0))
 print(tot)
