@@ -25,7 +25,7 @@ class WorkbookIo():
             for name in sheet_names:
                 databuff = []
                 worksheet = workbookload[name]
-                cellrange = worksheet['A1':'D5']
+                cellrange = worksheet['A1':'U17']
                 row_list = []
                 for row in cellrange:
                     row1 = []
@@ -50,14 +50,14 @@ class WorkbookIo():
             ws1 = wb1.active
             ws1.title = 'selected'
             ws1['A1'] = 'data'
-            list2 = [['psno', 'one', 'two', 'three']]
+            list2 = [['psno']]
             for i in range(1, 2):
-                for j in range(1, 5):
+                for j in range(1, 2):
                     ws1.cell(column=j, row=i, value=list2[i - 1][j - 1])
             for psn in data.keys():
                 for row in range(2, 3):
                     ws1.cell(row=row, column=1, value=psn)
-                    for col in range(2, 5):
+                    for col in range(2, 22):
                         ws1.cell(row=row, column=col, value=data[psn][0][col - 2])
                     # print(data[psn][0][1])
             wb1.save(filename=destination_file_name)

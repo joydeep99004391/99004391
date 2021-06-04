@@ -17,6 +17,11 @@ this project reads an input excel file  having multiple data and asks the user f
 
 
 
+### NOTE 
+        the pylint github action has been configured to pass only if pylint  score is above 8
+
+
+
 
 
 
