@@ -106,7 +106,16 @@ class WorkBook(WorkbookIo):
         try:
             total_data = {}
             total_data_buffer = []
-
+            try:
+                if float(psno) < 99004390.0 or float(psno)>99004405.0:
+                    raise ValueError("Enter valid psno")
+            except ValueError as ex:
+                print(ex)
+            try:
+                if dataselect not in ['games','tvseries','movies','books','football']:
+                    raise ValueError("Enter valid choice of data")
+            except ValueError as ex:
+                print(ex)
             for i in data.keys():
                 if i == dataselect:
                     data_buff = data[i]
@@ -123,18 +132,8 @@ class WorkBook(WorkbookIo):
         return total_data
 
 if __name__ == '__main__':
-    try:
-        PS_NO = str(float(input("enter psno from \n99004390 \n99004391 \n99004392 \n99004393 \n99004394 \n99004395 \n99004396 \n99004397 \n99004398 \n99004399 \n99004400 \n99004401 \n99004402 \n99004403 \n99004404 \n99004405\nyour choice psno:")))
-        if float(PS_NO) < 99004390.0 or float(PS_NO)>99004405.0:
-            raise ValueError
-    except ValueError :
-        print("invalid PSNO entered please enter PSNO from above list")
-    try:
-        data_to_be_selected = input("enter data to be selected  from \ngames \ntvseries \nmovies \nbooks \nfootball\n your choice of data:")
-        if data_to_be_selected not in ['games','tvseries','movies','books','football']:
-            raise ValueError
-    except ValueError :
-        print("invalid choice of data entered please enter correct choice of data from above list")
+    PS_NO = str(float(input("enter psno from \n99004390 \n99004391 \n99004392 \n99004393 \n99004394 \n99004395 \n99004396 \n99004397 \n99004398 \n99004399 \n99004400 \n99004401 \n99004402 \n99004403 \n99004404 \n99004405\nyour choice psno:")))
+    data_to_be_selected = input("enter data to be selected  from \ngames \ntvseries \nmovies \nbooks \nfootball\n your choice of data:")
     workbook = WorkBook()
     Data_Read = workbook.readworkbook()
     data_by_select = workbook.getdata_select(Data_Read, PS_NO, data_to_be_selected)

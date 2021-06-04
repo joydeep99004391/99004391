@@ -25,3 +25,19 @@ def test_get_selected_data():
           getdata=workbook.getdata_select(read_data,PS_NO,data_to_be_selected)
 
           assert len(getdata.keys()) >0
+def test_incorrect_psno():
+          workbook=WorkBook()
+          read_data=workbook.readworkbook()
+          PS_NO=str(float(99004389))
+          data_to_be_selected='games'
+          getdata=workbook.getdata_select(read_data,PS_NO,data_to_be_selected)
+
+          assert len(getdata.keys()) ==1
+def test_incorrect_data_selected():
+          workbook=WorkBook()
+          read_data=workbook.readworkbook()
+          PS_NO=str(float(99004389))
+          data_to_be_selected='test'
+          getdata=workbook.getdata_select(read_data,PS_NO,data_to_be_selected)
+
+          assert len(getdata.keys()) ==0          
