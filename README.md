@@ -15,6 +15,10 @@ this project reads an input excel file  having multiple data and asks the user f
    python main.py
 ```
 
+## pylint score
+ ```   
+   9.33
+```
 
 
 ### NOTE 
