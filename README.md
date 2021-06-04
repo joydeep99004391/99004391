@@ -1,6 +1,18 @@
-# 99004391 
+# PSNO - 99004391 
 ## advanced python project
+this project reads an input excel file  having multiple data and asks the user for psno and data to be read . the program reads the data and outputs it into selected_data.xlsx file .
 
+
+
+
+
+## requirements for running the project 
+
+   pip install pylint openpyxl pytest
+
+## steps to run the project 
+
+   python main.py
 
 
 
