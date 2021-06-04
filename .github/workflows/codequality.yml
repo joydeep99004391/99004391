@@ -1,0 +1,19 @@
+
+name: pylint code quality
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install pylint
+      run: pip install pylint
+    - name: pylint code_quality
+      run: pylint main.py --fail-under=8
