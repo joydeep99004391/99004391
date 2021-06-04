@@ -1,4 +1,11 @@
+'''
+       @author: joydeep ghosh 99004391
+       @description :main module implementing all the classes
+       @date : 3-06-2021
+'''
+
 from openpyxl import load_workbook, Workbook
+
 class WorkbookIo():
     '''
        @author: joydeep ghosh 99004391
@@ -29,13 +36,14 @@ class WorkbookIo():
                 data[name] = databuff
             return data
         except IOError as ex:
-            print("file reading error", ex)       
-    '''
-    @author: joydeep ghosh 99004391
-    @description :method implementing writing data to workbook
-    @date : 3-06-2021
-    '''
+            print("file reading error", ex)
+            return None
     def write_data(self, data):
+        '''
+        @author: joydeep ghosh 99004391
+        @description :method implementing writing data to workbook
+        @date : 3-06-2021
+        '''
         try:
             wb1 = Workbook()
             destination_file_name = 'selected_data.xlsx'
@@ -59,19 +67,20 @@ class WorkbookIo():
 
 
 
-'''
-@author: joydeep ghosh 99004391
-@description : Workbook class inheriting from WorkbookIo
-@date : 3-06-2021
 
-'''
 class WorkBook(WorkbookIo):
     '''
     @author: joydeep ghosh 99004391
-    @description :method implementing getting all data
+    @description : Workbook class inheriting from WorkbookIo
     @date : 3-06-2021
+
     '''
     def getdata(self, data, psno):
+        '''
+        @author: joydeep ghosh 99004391
+        @description :method implementing getting all data
+        @date : 3-06-2021
+        '''
         try:
             total_data = {}
             total_data_buffer = []
@@ -88,13 +97,13 @@ class WorkBook(WorkbookIo):
                 total_data[psno] = total_data_buffer
         except ValueError as ex:
             print("error in reading data", ex)
-        return total_data    
-    '''
-    @author: joydeep ghosh 99004391
-    @description :method implementing getting selected data 
-    @date : 3-06-2021
-    '''
+        return total_data
     def getdata_select(self, data, psno, dataselect):
+        '''
+         @author: joydeep ghosh 99004391
+         @description :method implementing getting selected data
+         @date : 3-06-2021
+        '''
         try:
             total_data = {}
             total_data_buffer = []
