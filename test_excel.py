@@ -21,7 +21,7 @@ def test_get_selected_data():
           workbook=WorkBook()
           read_data=workbook.readworkbook()
           PS_NO=str(float(99004390))
-          data_to_be_selected='sheet1'
+          data_to_be_selected='games'
           getdata=workbook.getdata_select(read_data,PS_NO,data_to_be_selected)
 
           assert len(getdata.keys()) >0
