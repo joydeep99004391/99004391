@@ -19,7 +19,7 @@ class WorkbookIo():
         @date : 3-06-2021
         '''
         try:
-            workbookload = load_workbook(filename='advancedpython.xlsx')
+            workbookload = load_workbook(filename='input_data.xlsx')
             sheet_names = workbookload.sheetnames
             data = {}
             for name in sheet_names:
@@ -46,7 +46,7 @@ class WorkbookIo():
         '''
         try:
             wb1 = Workbook()
-            destination_file_name = 'selected_data.xlsx'
+            destination_file_name = 'output_data.xlsx'
             ws1 = wb1.active
             ws1.title = 'selected'
             ws1['A1'] = 'data'
