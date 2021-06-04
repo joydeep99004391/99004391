@@ -22,7 +22,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Install pytest 
-      run: pip install pytest
+    - name: Install pytest openpyxl
+      run: pip install pytest openpyxl
     - name: run pytest 
       run: pytest test_excel.py
