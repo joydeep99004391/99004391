@@ -7,13 +7,13 @@ this project reads an input excel file  having multiple data and asks the user f
 
 
 ## requirements for running the project 
-
+```
    pip install pylint openpyxl pytest
-
+```
 ## steps to run the project 
-
+```
    python main.py
-
+```
 
 
 
